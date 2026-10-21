@@ -1,0 +1,66 @@
+/* MARK: fonts */
+@font-face {
+  font-family: "Seraphs";
+  src: url("font/SeraphsVF.woff2") format("woff2"); /* Modern Browsers */
+}
+html {
+  --scale--2: 0.694em;
+  --scale--1: 0.833em;
+  --scale-0: 1em;
+  --scale-1: 1.2em;
+  --scale-2: 1.44em;
+  --scale-3: 1.728em;
+  --scale-4: 2.074em;
+  --scale-5: 2.488em;
+  --scale-6: 2.986em;
+
+  --wght: 500;
+  --SRFS: 50;
+}
+/* MARK: items */
+body {
+  font-family: "newtimes";
+  font-weight: var(--wght);
+  font-variation-settings: "SRFS" var(--SRFS);
+  background-color: rgb(81, 139, 232);
+}
+main {
+  position: relative;
+  display: grid;
+  gap: var(--scale--6);
+  grid-template-columns: repeat(12, 1fr);
+  transform: none;
+}
+.title {
+  text-align: center;
+}
+.takeoff {
+  display: inline-block;
+  transform: rotate(-30deg);
+  color: red;
+  font-size: 7 em;
+}
+
+section story {
+  font-size: 0.2em;
+  font-weight: 400;
+}
+.sorry {
+  font-size: 7em;
+  font-weight: 10000000;
+  width: min-content;
+  word-spacing: -0.4em;
+  animation: appear 3s ease-in-out infinite alternate;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

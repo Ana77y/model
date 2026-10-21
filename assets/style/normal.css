@@ -150,14 +150,53 @@ ul {
   justify-content: center;
 }
 
+.background-box {
+  background-color: black;
+}
 div.box {
-  --s: 700px;
-  --p: 15px;
+  --s: 100vw; /*Size of the circle */
+  --p: 50px; /* padding */
 
-  height: var(--s);
+  height: 200vw;
   width: var(--s);
   border-radius: 50%;
   background: #333;
+  color: #fff;
+  margin: 30px auto;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.box i,
+.box::before {
+  content: "";
+  float: left;
+  height: 100%;
+  width: 50%;
+  shape-outside: radial-gradient(
+    farthest-side at right,
+    transparent calc(100% - var(--p)),
+    #fff 0
+  );
+}
+
+.box i {
+  float: right;
+  shape-outside: radial-gradient(
+    farthest-side at left,
+    transparent calc(100% - var(--p)),
+    #fff 0
+  );
+}
+/* 
+div.box {
+  --s: 700px;
+  --p: 50px;
+
+  height: 1400px;
+  width: var(--s);
+  border-radius: 50%;
+  background: pink;
   color: #fff;
   margin: 30px auto;
   font-size: 20px;
@@ -184,7 +223,7 @@ div.box {
     transparent calc(100%-var (--p)),
     #fff 0
   );
-}
+} */
 
 h3 {
   margin: 0;
@@ -218,4 +257,14 @@ dialog {
   width: 300px;
   height: 300px;
   padding: 25px;
+}
+footer {
+  color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  dl {
+    dt {
+      color: grey;
+    }
+  }
 }
