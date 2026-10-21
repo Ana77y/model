@@ -1,17 +1,109 @@
 /* HIER KOMT JOUW CSS */
+html {
+  --brand-primary: #fdcce0;
+  --brand-secondary: #000000ec;
+  --brand-accent: #ffffff;
+
+  --whitespace-s: 1rem;
+  --whitespace-m: 2rem;
+  --whitespace-l: 4rem;
+
+  --radius-s: 0.5rem;
+  --radius-m: 1rem;
+  --radius-l: 2rem;
+
+  color-scheme: light dark;
+
+  --background: light-dark(#fbe7ef, rgb(157, 159, 161));
+  --color: light-dark(rgb(246, 246, 250), rgb(248, 246, 246));
+  --background-button: light-dark(rgb(120, 122, 124), rgb(246, 246, 250));
+  --color-button: light-dark(white, white);
+  --topbar: light-dark(white, white);
+}
+
+html:has([value="dark-theme"]:checked) {
+  color-scheme: dark;
+}
 
 body {
   font-family: "Pinyon script", cursive;
-  background-color: rgb(249, 209, 215);
-  color: white;
-  color-scheme: light dark;
+  background-color: var(--background);
+  color: var(--color);
+  padding-bottom: 500px;
+  font-weight: normal;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.topbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  background-color: light-dark(white, black);
+  color: var(--color);
+  padding: 0 40px;
+  display: flex;
+  font-weight: normal;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: light-dark(#fdcce0, #6a6969);
+  margin-right: auto;
+  -webkit-text-stroke: 1px light-dark(#000000ec, #ffffff);
+}
+
+.search {
+  display: flex;
+  height: 40px;
+  font-weight: normal;
+  margin-left: auto;
+  background: var(--background);
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+
+.search input {
+  flex: 1;
+  padding: 0 15px;
+  font-size: 15px;
+  font-weight: normal;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  background-color: var(--background);
+  color: light-dark(#000000, #ffffff);
+}
+.search button {
+  padding: 0 20px;
+  border: 2px solid #ffffff;
+  background: var(--brand-primary);
+  color: light-dark(black, white);
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+button:hover {
+  background: var(--brand-accent);
+}
+
+.light-switch {
+  color: black;
 }
 
 header {
-  border: 2px solid rgb(249, 209, 215);
+  border: 2px solid var(--background);
   position: relative;
   padding: 50px;
   text-align: center;
+  font-weight: normal;
   border-radius: 10px;
 }
 header img {
@@ -19,13 +111,111 @@ header img {
   display: block;
   margin: 0 auto 20px;
 }
+
+.welcome-section {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 h1 {
-  margin: 0;
+  margin: 0 auto;
   font-size: 50px;
+  text-align: center;
+  font-weight: normal;
+  width: min-content;
+  -webkit-text-stroke: 1px #000000ec;
+}
+:root {
+  --pink: #fee1f5;
+  --black: rgb(23, 21, 21);
+  --darkpink: #f9caea;
+  --circle-color: #fee1f5;
 }
 
 h2 {
   margin: 0;
   font-size: 80px;
+  font-weight: normal;
   text-align: center;
+  padding-bottom: 0px;
+  -webkit-text-stroke: 1px #000000ec;
+
+  position: relative;
+  z-index: 1;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+div.box {
+  --s: 450px;
+  --p: 15px;
+
+  height: var(--s);
+  width: var(--s);
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  margin: 30px auto;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.box i,
+.box::before {
+  content: "";
+  float: left;
+  height: 100%;
+  width: 50%;
+  shape-outside: radial-gradient(
+    farthest-side at right,
+    transparent calc (100%-var(--p)),
+    #fff 0
+  );
+}
+
+.box i {
+  float: right;
+  shape-outside: radial-gradient(
+    farthest-side at left,
+    transparent calc(100%-var (--p)),
+    #fff 0
+  );
+}
+
+h3 {
+  margin: 0;
+  font-size: 80px;
+  font-weight: normal;
+  text-align: center;
+  color: light-dark(black, white);
+  -webkit-text-stroke: 1px #000000ec;
+}
+h4 {
+  margin: 0;
+  font-size: 80px;
+  font-weight: normal;
+  text-align: center;
+  color: light-dark(black, white);
+  -webkit-text-stroke: 1px #000000ec;
+}
+p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  -webkit-text-stroke: 1px #000000ec;
+}
+
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+
+  width: 300px;
+  height: 300px;
+  padding: 25px;
 }

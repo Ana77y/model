@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="[Ana Ivankovic]" />
+    <meta name="author" content="Ana Ivankovic" />
     <meta name="color-scheme" content="dark light" />
 
     <title>BalkanBaddie</title>
@@ -14,31 +14,57 @@
       href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
-    <!-- Importeer het webring component, voeg jouw eigen domein toe in data-page -->
-    <script></script>
   </head>
   <body>
-    <header>
-      <img
-        src="balkangirls-removebg-preview.png"
-        alt="Chatgpt gegenereerde afbeelding balkangirls in traditionele klederdracht."
-      />
-      <h1>Welcome</h1>
-      <h2>Balkanbaddie</h2>
+    <header class="topbar">
+      <div class="logo">BalkanBaddie</div>
+      <form class="search">
+        <input type="text" placeholder="Search..." />
+        <button>🔍</button>
+      </form>
+      <form class="light-switch" action="">
+        <label>
+          <input type="checkbox" switch name="theme" value="dark-theme" />
+          Dark Mode
+        </label>
+      </form>
     </header>
 
     <main>
+      <section class="welcome-section">
+        <h1>Welcome Balkanbaddie</h1>
+
+        <img
+          src="balkangirls-removebg-preview.png"
+          alt="Chatgpt gegenereerde afbeelding balkangirls in traditionele klederdracht."
+        />
+      </section>
+
+      <div class="box">
+        <i></i>
+        Skincare
+      </div>
+
       <article>
         <h3>Skincare</h3>
+        <p>here we give some grandma/ aunty tips for Skincare</p>
       </article>
 
       <article>
-        <h4>Make-up</h4>
+        <h4>Haircare</h4>
+        <p>here we give some haircare tips</p>
       </article>
     </main>
 
     <footer>
       <p>Made by Ana Ivankovic</p>
     </footer>
+
+    <dialog open>
+      <p>Cookies-popup</p>
+      <form method="dialog">
+        <button>OK</button>
+      </form>
+    </dialog>
   </body>
 </html>
