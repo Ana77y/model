@@ -151,7 +151,7 @@ ul {
 }
 
 div.box {
-  --s: 450px;
+  --s: 700px;
   --p: 15px;
 
   height: var(--s);
